@@ -67,7 +67,7 @@ const App = () => {
         <Text mt="6" fontSize="4xl">
           Nekobot API Viewer
         </Text>
-        <Stack direction="row" spacing={1}>
+        <Stack direction={{ base: "column", md: "row" }} spacing={1}>
           <Select onChange={onChange} placeholder="タイプ選んで">
             <option value="neko" selected>
               Neko
@@ -83,6 +83,8 @@ const App = () => {
             mx="2"
             onClick={fetchAgain}
             isDisabled={nowLoading}
+            w={{ base: "full", md: "auto" }}
+            marginX={{ base: "auto", md: 1 }}
           >
             Reload
           </Button>
