@@ -79,8 +79,7 @@ const App = () => {
             ))}
           </Select>
           <Button
-            textColor="white"
-            bgColor="blue.400"
+            colorScheme="twitter"
             px="2"
             onClick={fetchAgain}
             isDisabled={nowLoading}
