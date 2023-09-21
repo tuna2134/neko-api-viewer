@@ -63,7 +63,7 @@ const App = () => {
   ];
   return (
     <>
-      <Box w="100%" maxW="xl" mx="auto">
+      <Box w="100%" maxW="xl" mx="auto" px={1}>
         <Text mt="6" fontSize="4xl">
           Nekobot API Viewer
         </Text>
