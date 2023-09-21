@@ -1,4 +1,12 @@
-import { Box, Text, Select, Spinner, Button, useToast, Image } from "@chakra-ui/react";
+import {
+  Box,
+  Text,
+  Select,
+  Spinner,
+  Button,
+  useToast,
+  Image,
+} from "@chakra-ui/react";
 import React, { useState, useEffect } from "react";
 
 async function fetchImage(mode: string): Promise<string> {
@@ -25,13 +33,14 @@ const App = () => {
     toast.close(toastId);
   };
   const fetchAgain = async () => {
-    toast({
+    const toastId = toast({
       title: "Loading...",
       description: "画像を取得中です...",
-    })
+    });
     const rurl = await fetchImage(last);
     setUrl(rurl);
-  }
+    toast.close(toastId);
+  };
   useEffect(() => {
     (async () => {
       const rurl = await fetchImage("neko");
@@ -54,27 +63,42 @@ const App = () => {
     {
       name: "Hentai",
       value: "hentai",
-    }
-  ]
+    },
+  ];
   return (
     <>
       <Box w="100%" maxW="xl" mx="auto">
         <Text fontSize="4xl">Neko API Viewer</Text>
         <Box display="flex">
           <Select px="2" onChange={onChange} placeholder="タイプ選んで">
-            <option value="neko" selected>Neko</option>
-            {kinds.map((kind => (
-              <option key={kind.value} value={kind.value}>{kind.name}</option>
-            )))}
+            <option value="neko" selected>
+              Neko
+            </option>
+            {kinds.map((kind) => (
+              <option key={kind.value} value={kind.value}>
+                {kind.name}
+              </option>
+            ))}
           </Select>
-          <Button textColor="white" bgColor="blue.400" px="2" onClick={fetchAgain}>Reload</Button>
+          <Button
+            textColor="white"
+            bgColor="blue.400"
+            px="2"
+            onClick={fetchAgain}
+          >
+            Reload
+          </Button>
         </Box>
         <Box mt="4">
-          {url == undefined ? <Spinner /> : <Image mx="auto" src={url} alt={last} loading="lazy" />}
+          {url == undefined ? (
+            <Spinner />
+          ) : (
+            <Image mx="auto" src={url} alt={last} loading="lazy" />
+          )}
         </Box>
       </Box>
     </>
-  )
+  );
 };
 
 export default App;
