@@ -64,11 +64,19 @@ const App = () => {
       name: "Hentai",
       value: "hentai",
     },
+    {
+      name: "パイズリ",
+      value: "paizuri",
+    },
+    {
+      name: "pgif",
+      value: "pgif",
+    }
   ];
   return (
     <>
       <Box w="100%" maxW="xl" mx="auto">
-        <Text fontSize="4xl">Neko API Viewer</Text>
+        <Text mt="6" fontSize="4xl">Neko API Viewer</Text>
         <Box display="flex">
           <Select px="2" onChange={onChange} placeholder="タイプ選んで">
             <option value="neko" selected>
