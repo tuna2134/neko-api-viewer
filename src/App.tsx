@@ -1,12 +1,4 @@
-import {
-  Box,
-  Text,
-  Select,
-  Spinner,
-  Button,
-  useToast,
-  Image,
-} from "@chakra-ui/react";
+import { Box, Text, Select, Spinner, Button, Image } from "@chakra-ui/react";
 import React, { useState, useEffect } from "react";
 
 async function fetchImage(mode: string): Promise<string> {
@@ -16,37 +8,33 @@ async function fetchImage(mode: string): Promise<string> {
 }
 
 const App = () => {
-  const [url, setUrl] = useState<string | undefined>(undefined);
+  const [img, setImg] = useState(<Spinner />);
   const [last, setLast] = useState<string>("neko");
-  const toast = useToast();
+  const [nowLoading, setNowLoading] = useState<boolean>(false);
   const onChange = async (e: React.ChangeEvent<HTMLSelectElement>) => {
     const mode = e.target.value;
-    const toastId = toast({
-      title: "Loading...",
-      description: "画像を取得中です...",
-      status: "info",
-      position: "bottom-right",
-    });
+    setNowLoading(true);
+    setImg(<Spinner />);
     const rurl = await fetchImage(mode);
     setLast(mode);
-    setUrl(rurl);
-    toast.close(toastId);
+    setImg(<Image src={rurl} alt={last} />);
+    setNowLoading(false);
   };
   const fetchAgain = async () => {
-    const toastId = toast({
-      title: "Loading...",
-      description: "画像を取得中です...",
-    });
+    setNowLoading(true);
+    setImg(<Spinner />);
     const rurl = await fetchImage(last);
-    setUrl(rurl);
-    toast.close(toastId);
+    setImg(<Image src={rurl} alt={last} />);
+    setNowLoading(false);
   };
   useEffect(() => {
     (async () => {
+      setNowLoading(true);
       const rurl = await fetchImage("neko");
-      setUrl(rurl);
+      setImg(<Image src={rurl} alt="neko" />);
+      setNowLoading(false);
     })();
-  }, [setUrl]);
+  }, [setImg, setNowLoading]);
   const kinds = [
     {
       name: "Coffee",
@@ -71,12 +59,14 @@ const App = () => {
     {
       name: "pgif",
       value: "pgif",
-    }
+    },
   ];
   return (
     <>
       <Box w="100%" maxW="xl" mx="auto">
-        <Text mt="6" fontSize="4xl">Neko API Viewer</Text>
+        <Text mt="6" fontSize="4xl">
+          Nekobot API Viewer
+        </Text>
         <Box display="flex">
           <Select px="2" onChange={onChange} placeholder="タイプ選んで">
             <option value="neko" selected>
@@ -93,17 +83,12 @@ const App = () => {
             bgColor="blue.400"
             px="2"
             onClick={fetchAgain}
+            isDisabled={nowLoading}
           >
             Reload
           </Button>
         </Box>
-        <Box mt="4">
-          {url == undefined ? (
-            <Spinner />
-          ) : (
-            <Image mx="auto" src={url} alt={last} loading="lazy" />
-          )}
-        </Box>
+        <Box mt="4">{img}</Box>
       </Box>
     </>
   );
