@@ -1,4 +1,4 @@
-import { Box, Text, Select, Spinner, Button, Image, Stack } from "@chakra-ui/react";
+import { Box, Heading, Select, Spinner, Button, Image, Stack } from "@chakra-ui/react";
 import React, { useState, useEffect } from "react";
 
 async function fetchImage(mode: string): Promise<string> {
@@ -64,9 +64,9 @@ const App = () => {
   return (
     <>
       <Box w="100%" maxW="xl" mx="auto" px={2}>
-        <Text mt="6" fontSize="4xl">
+        <Heading mt="6" as="h2" size="2xl">
           Nekobot API Viewer
-        </Text>
+        </Heading>
         <Stack direction={{ base: "column", md: "row" }} spacing={1}>
           <Select onChange={onChange} placeholder="タイプ選んで">
             <option value="neko" selected>
