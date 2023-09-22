@@ -47,7 +47,7 @@ const App = () => {
           Nekobot Image Viewer
         </Heading>
         <Stack direction={{ base: "column", md: "row" }} spacing={1}>
-          <Select onChange={onChange} placeholder="タイプ選んで">
+          <Select isDisabled={nowLoading} onChange={onChange} placeholder="タイプ選んで">
             <option value="neko" selected>
               Neko
             </option>
