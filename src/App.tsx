@@ -11,6 +11,7 @@ import {
 import React, { useState, useEffect } from "react";
 import kinds from "./kind.json";
 import { Footer } from "./components";
+import { MdAutorenew } from "react-icons/md";
 
 async function fetchImage(mode: string): Promise<string> {
   const response = await fetch("https://nekobot.xyz/api/image?type=" + mode);
@@ -84,7 +85,7 @@ const App = () => {
             w={{ base: "full", md: "auto" }}
             marginX={{ base: "auto", md: 1 }}
           >
-            Reload
+            <MdAutorenew />
           </Button>
         </Stack>
         <Center mt="4">{img}</Center>
