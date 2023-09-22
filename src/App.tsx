@@ -64,8 +64,8 @@ const App = () => {
   return (
     <>
       <Box w="100%" maxW="xl" mx="auto" px={2}>
-        <Heading mt="6" as="h2" size="2xl">
-          Nekobot Imagw Viewer
+        <Heading mt="6" mb="2" as="h2" size="2xl">
+          Nekobot Image Viewer
         </Heading>
         <Stack direction={{ base: "column", md: "row" }} spacing={1}>
           <Select onChange={onChange} placeholder="タイプ選んで">
