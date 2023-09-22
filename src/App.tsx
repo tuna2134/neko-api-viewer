@@ -45,11 +45,11 @@ const App = () => {
   useEffect(() => {
     (async () => {
       setNowLoading(true);
-      const rurl = await fetchImage("neko");
-      setImg(<Image src={rurl} alt="neko" />);
+      const rurl = await fetchImage(last);
+      setImg(<Image src={rurl} alt={last} />);
       setNowLoading(false);
     })();
-  }, [setImg, setNowLoading]);
+  }, [last, setImg, setNowLoading]);
   return (
     <Box display="flex" flexDirection="column" minHeight="100vh">
       <Box w="100%" maxW="xl" mx="auto" my="4" px={2}>
