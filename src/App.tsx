@@ -10,13 +10,13 @@ async function fetchImage(mode: string): Promise<string> {
 const LoadingSpinner = <Spinner size="xl" />
 
 const App = () => {
-  const [img, setImg] = useState(<Spinner />);
+  const [img, setImg] = useState(LoadingSpinner);
   const [last, setLast] = useState<string>("neko");
   const [nowLoading, setNowLoading] = useState<boolean>(false);
   const onChange = async (e: React.ChangeEvent<HTMLSelectElement>) => {
     const mode = e.target.value;
     setNowLoading(true);
-    setImg(<LoadingSpinner />);
+    setImg(LoadingSpinner);
     const rurl = await fetchImage(mode);
     setLast(mode);
     setImg(<Image src={rurl} alt={last} />);
@@ -24,7 +24,7 @@ const App = () => {
   };
   const fetchAgain = async () => {
     setNowLoading(true);
-    setImg(<Spinner />);
+    setImg(<LoadingSpinner />);
     const rurl = await fetchImage(last);
     setImg(<Image src={rurl} alt={last} />);
     setNowLoading(false);
