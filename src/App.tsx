@@ -65,7 +65,7 @@ const App = () => {
     <>
       <Box w="100%" maxW="xl" mx="auto" px={2}>
         <Heading mt="6" as="h2" size="2xl">
-          Nekobot API Viewer
+          Nekobot Imagw Viewer
         </Heading>
         <Stack direction={{ base: "column", md: "row" }} spacing={1}>
           <Select onChange={onChange} placeholder="タイプ選んで">
