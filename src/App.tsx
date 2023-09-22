@@ -64,7 +64,7 @@ const App = () => {
   return (
     <>
       <Box w="100%" maxW="xl" mx="auto" px={2}>
-        <Heading mt="6" mb="2" as="h2" size="2xl">
+        <Heading textAlign="center" mt="6" mb="2" as="h2" size="2xl">
           Nekobot Image Viewer
         </Heading>
         <Stack direction={{ base: "column", md: "row" }} spacing={1}>
