@@ -1,5 +1,6 @@
 import { Box, Heading, Select, Spinner, Button, Image, Stack } from "@chakra-ui/react";
 import React, { useState, useEffect } from "react";
+import kinds from "./kind.json";
 
 async function fetchImage(mode: string): Promise<string> {
   const response = await fetch("https://nekobot.xyz/api/image?type=" + mode);
@@ -39,32 +40,6 @@ const App = () => {
       setNowLoading(false);
     })();
   }, [setImg, setNowLoading]);
-  const kinds = [
-    {
-      name: "Coffee",
-      value: "coffee",
-    },
-    {
-      name: "Food",
-      value: "food",
-    },
-    {
-      name: "4K",
-      value: "4k",
-    },
-    {
-      name: "Hentai",
-      value: "hentai",
-    },
-    {
-      name: "パイズリ",
-      value: "paizuri",
-    },
-    {
-      name: "pgif",
-      value: "pgif",
-    },
-  ];
   return (
     <>
       <Box w="100%" maxW="xl" mx="auto" px={2}>
