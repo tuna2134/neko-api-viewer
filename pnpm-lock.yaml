@@ -44,7 +44,7 @@ importers:
         version: 8.11.0(eslint@9.13.0)(typescript@5.6.3)
       '@vitejs/plugin-react-swc':
         specifier: ^3.3.2
-        version: 3.7.1(vite@5.4.9)
+        version: 3.7.1(vite@5.4.10)
       eslint:
         specifier: ^9.0.0
         version: 9.13.0
@@ -62,7 +62,7 @@ importers:
         version: 5.6.3
       vite:
         specifier: ^5.0.0
-        version: 5.4.9
+        version: 5.4.10
 
 packages:
 
@@ -1120,6 +1120,9 @@ packages:
   picocolors@1.1.0:
     resolution: {integrity: sha512-TQ92mBOW0l3LeMeyLV6mzy/kWr8lkd/hp3mTg7wYK7zJhuBStmGMBG0BdeDZS/dZx1IukaX6Bk11zcln25o1Aw==}
 
+  picocolors@1.1.1:
+    resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
+
   picomatch@2.3.1:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
@@ -1338,8 +1341,8 @@ packages:
       '@types/react':
         optional: true
 
-  vite@5.4.9:
-    resolution: {integrity: sha512-20OVpJHh0PAM0oSOELa5GaZNWeDjcAvQjGXy2Uyr+Tp+/D2/Hdz6NLgpJLsarPTA2QJ6v8mX2P1ZfbsSKvdMkg==}
+  vite@5.4.10:
+    resolution: {integrity: sha512-1hvaPshuPUtxeQ0hsVH3Mud0ZanOLwVTneA1EgbAM5LhaZEqyPWGRQ7BtaMvUrTDeEaC8pxtj6a6jku3x4z6SQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -1966,10 +1969,10 @@ snapshots:
       '@typescript-eslint/types': 8.11.0
       eslint-visitor-keys: 3.4.3
 
-  '@vitejs/plugin-react-swc@3.7.1(vite@5.4.9)':
+  '@vitejs/plugin-react-swc@3.7.1(vite@5.4.10)':
     dependencies:
       '@swc/core': 1.7.26
-      vite: 5.4.9
+      vite: 5.4.10
     transitivePeerDependencies:
       - '@swc/helpers'
 
@@ -2415,12 +2418,14 @@ snapshots:
 
   picocolors@1.1.0: {}
 
+  picocolors@1.1.1: {}
+
   picomatch@2.3.1: {}
 
   postcss@8.4.47:
     dependencies:
       nanoid: 3.3.7
-      picocolors: 1.1.0
+      picocolors: 1.1.1
       source-map-js: 1.2.1
 
   prelude-ls@1.2.1: {}
@@ -2613,7 +2618,7 @@ snapshots:
     optionalDependencies:
       '@types/react': 18.3.12
 
-  vite@5.4.9:
+  vite@5.4.10:
     dependencies:
       esbuild: 0.21.5
       postcss: 8.4.47
