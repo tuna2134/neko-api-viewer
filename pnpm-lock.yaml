@@ -44,7 +44,7 @@ importers:
         version: 8.21.0(eslint@9.18.0)(typescript@5.7.3)
       '@vitejs/plugin-react-swc':
         specifier: ^3.3.2
-        version: 3.7.2(vite@6.0.10)
+        version: 3.7.2(vite@6.0.11)
       eslint:
         specifier: ^9.0.0
         version: 9.18.0
@@ -62,7 +62,7 @@ importers:
         version: 5.7.3
       vite:
         specifier: ^6.0.0
-        version: 6.0.10
+        version: 6.0.11
 
 packages:
 
@@ -1307,8 +1307,8 @@ packages:
       '@types/react':
         optional: true
 
-  vite@6.0.10:
-    resolution: {integrity: sha512-MEszunEcMo6pFsfXN1GhCFQqnE25tWRH0MA4f0Q7uanACi4y1Us+ZGpTMnITwCTnYzB2b9cpmnelTlxgTBmaBA==}
+  vite@6.0.11:
+    resolution: {integrity: sha512-4VL9mQPKoHy4+FE0NnRE/kbY51TOfaknxAjt3fJbGJxhIpBZiqVzlZDEesWWsuREXHwNdAoOFZ9MkPEVXczHwg==}
     engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
     hasBin: true
     peerDependencies:
@@ -1933,10 +1933,10 @@ snapshots:
       '@typescript-eslint/types': 8.21.0
       eslint-visitor-keys: 4.2.0
 
-  '@vitejs/plugin-react-swc@3.7.2(vite@6.0.10)':
+  '@vitejs/plugin-react-swc@3.7.2(vite@6.0.11)':
     dependencies:
       '@swc/core': 1.9.3
-      vite: 6.0.10
+      vite: 6.0.11
     transitivePeerDependencies:
       - '@swc/helpers'
 
@@ -2552,7 +2552,7 @@ snapshots:
     optionalDependencies:
       '@types/react': 19.0.7
 
-  vite@6.0.10:
+  vite@6.0.11:
     dependencies:
       esbuild: 0.24.2
       postcss: 8.5.1
